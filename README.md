@@ -1,4 +1,4 @@
-# sfwe475-lab1-2403060010
+# SFWE 475 Lab 1
 
 ```bash
 npm install
