@@ -1,4 +1,5 @@
 import { addTask, findTask } from "./tasks";
+import { fetchTodo } from "./api";
 import { Task } from "../schemas";
 
 let tasks: Task[] = [];
@@ -13,3 +14,27 @@ if (missing.ok) {
 } else {
   console.log(missing.error);
 }
+
+// const ids = [1, 2, 3, 4, 5];
+
+// async function fetchTodosSequentially(todoIds: number[]) {
+//   const todos = [];
+//   for (const id of todoIds) {
+//     todos.push(await fetchTodo(id));
+//   }
+//   return todos;
+// }
+
+// async function main() {
+//   console.time("sequential");
+//   const sequential = await fetchTodosSequentially(ids);
+//   console.timeEnd("sequential");
+//   console.log(sequential);
+
+//   console.time("parallel");
+//   const parallel = await fetchTodos(ids);
+//   console.timeEnd("parallel");
+//   console.log(parallel);
+// }
+
+// main();
