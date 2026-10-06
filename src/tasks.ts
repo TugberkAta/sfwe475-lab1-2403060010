@@ -1,9 +1,5 @@
-export type Task = {
-  id: number;
-  title: string;
-  done: boolean;
-  dueDate?: string;
-};
+import { Task } from "../schemas";
+
 export function addTask(tasks: Task[], title: string): Task[] {
   const id = tasks.length + 1;
   return [...tasks, { id, title, done: false }];

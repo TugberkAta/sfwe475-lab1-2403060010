@@ -1,4 +1,6 @@
-import { addTask, findTask, type Task } from "./tasks";
+import { addTask, findTask } from "./tasks";
+import { Task } from "../schemas";
+
 let tasks: Task[] = [];
 tasks = addTask(tasks, "Read Chapter 1");
 const first = findTask(tasks, 1);
