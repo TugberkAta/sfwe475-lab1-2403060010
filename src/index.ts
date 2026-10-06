@@ -1,6 +1,7 @@
 import { addTask, findTask } from "./tasks";
 import { fetchTodo } from "./api";
 import { Task } from "../schemas";
+import { createTasks } from "./createTask";
 
 let tasks: Task[] = [];
 tasks = addTask(tasks, "Read Chapter 1");
@@ -38,3 +39,21 @@ if (missing.ok) {
 // }
 
 // main();
+
+const tasksToCreate: unknown = [
+  { title: "Read Chapter 1" },
+  { dueDate: "2026-01-01" },
+  { title: 1 },
+];
+
+const batch = createTasks(tasksToCreate);
+if (batch.ok) {
+  for (const item of batch.succeeded) {
+    console.log(item.index, item.task);
+  }
+  for (const item of batch.failed) {
+    console.log(item.index, item.error);
+  }
+} else {
+  console.log(batch.error);
+}
